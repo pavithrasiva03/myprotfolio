@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* Reset */
+    * { 
+        margin: 0;
+        padding: 0; 
+        box-sizing: border-box; 
+        font-family: Arial, sans-serif; 
+    }
+
+    body {
+         /*background: #f5f5f5; color: #333; 
+         background-color: #0b2239;*/
+         background-image: linear-gradient(to right,#061c32,rgb(11, 11, 169));
+        }
+nav{
+  height: 100px;
+  background-color: rgb(27, 117, 201);
+   display: flex;
+ justify-content:center;
+  align-items: center;
+}
+
+
+nav>ul{
+    display: flex;
+    gap: 30px;
+    
+}
+nav>ul>li{
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    list-style: none;
+}
+nav>ul>li>a{
+  color:black;
+  text-decoration: none;
+}
+nav>ul>li>a:hover{
+  color: chartreuse;
+}
+section { padding: 80px 20px; min-height: 100vh;
+}
+    #home {
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center;
+      color:white;
+      text-align: center;
+    }
+    .btn {
+  display:inline-block;
+  margin:10px;
+  padding:12px 25px;
+  border-radius:8px;
+  background: #ff6b6b;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  transition: transform 0.3s, background 0.3s;
+}
+.btn:hover {
+  transform: scale(1.1);
+  background: #ff3b3b;
+}
+    .highlight{
+        font-size: 50px;
+        color: #ff6b6b;
+        text-shadow: 1px 1px 0 #4332c3,
+        2px 2px 0 #97dc42,
+        3px 3px  0 #5f27cd;
+       
+        font-weight: bold;
+    }
+    #home h2 { 
+        font-size: 40px; 
+        margin-bottom: 10px; 
+    }
+    #home h3{
+      font-size: 35px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    }
+    
+
+    #about, #projects, #skills, #contact {
+      max-width: 1000px; margin: auto;
+    }
+    h2.section-title { 
+      background-color: white;
+        font-size: 28px; 
+        margin-bottom: 20px; 
+        text-align: center; 
+      }
+section>#aboutme{
+  text-indent: 50px;
+  color: white;
+  font-size: 20px;
+}
+section>#aboutme>#qspider{
+  color: #97dc42;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+    .projects-grid {
+      display: grid; 
+      grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+ 
+    }
+    .project-card {
+      background: #eb6f6f; padding: 20px; border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project-card:hover { 
+        transform: scale(1.05); 
+    }
+
+    .skills-list { 
+        display: flex; 
+        /*flex-wrap: wrap; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px; 
+        justify-content: center; }
+    .skills-list span {
+      background: #2196f3; 
+      color: #fff; 
+      padding: 8px 15px;
+      border-radius: 20px; 
+      font-size: 14px;
+    }
+
+    form {
+      display: flex; 
+      flex-direction: column; 
+      gap: 15px; 
+      max-width: 500px; 
+      margin: auto;
+    }
+    input, textarea {
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      border-radius: 5px; 
+      font-size: 16px;
+    }
+    button {
+      background: #2196f3; 
+      color: #fff; 
+      border: none; 
+      padding: 12px;
+      border-radius: 5px; 
+      cursor: pointer; 
+      transition: 0.3s;
+    }
+    button:hover { 
+        background: #1976d2; 
+    }
+
+    footer {
+      text-align: center; 
+      padding: 20px; 
+      background: #222; 
+      color: #fff;
+    }
+.contact-links a img {
+  transition: transform 0.3s;
+}
+
+.contact-links a:hover img {
+  transform: scale(1.2);
+}
+  </style>
+</head>
+<body>
+ 
+    <nav>
+    
+      <ul >
+        <li><a href="#home" >Home</a></li>
+        <li><a href="#about" >About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+ 
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Hello, I'm <span class="highlight">Pavithra S</span></h2>
+    <h3>I am <span id="typed"></span></h3>
+    <div class="cta-buttons" style="margin-top:30px;">
+    <a href="#projects" class="btn">View Projects</a> <br> <br>
+    <a href="https://www.dropbox.com/scl/fi/tqn3qn2t1ptcg4q9cslmn/Pavithra_S__RESUME_.pdf?rlkey=k20td0jiqbx2ge4npry5vzfxk&st=k33l9gz3&dl=0" download class="btn">Download Resume</a>
+  </div>
+    <!--<marquee behavior="slide" direction="up" scrollamount="50">
+      <img src="https://cdn.pixabay.com/animation/2022/07/29/14/45/14-45-52-572_512.gif" alt="">
+    </marquee>-->
+    
+<div class="contact-links" style="text-align:center; margin-top:30px;">
+    <a href="mailto:pavithravasi03@gmail.com" target="_blank" style="margin:0 15px; text-decoration:none;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/gmail.png" alt="Gmail" style="width:35px; vertical-align:middle;">
+    </a>
+    <a href="https://www.linkedin.com/in/pavithra-siva-345973285" target="_blank" style="margin:0 15px; text-decoration:none;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" style="width:35px; vertical-align:middle;">
+    </a>
+    <a href="https://github.com/pavithrasiva03" target="_blank" style="margin:0 15px; text-decoration:none;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" style="width:35px; vertical-align:middle;">
+    </a>
+  </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p id="aboutme">
+     I’m Pavithra S, a dedicated Computer Science Engineer with a passion for Java Full Stack Development and building efficient, user-centered software solutions. <br>  I love turning ideas into fully functional applications that combine clean design, strong backend logic, and seamless database integration. <br><br>
+
+During my Python Developer Internship at BG Enterprises, I worked on AI-powered IoT systems, creating real-time monitoring and analytics solutions that improved predictive model accuracy. This experience enhanced my understanding of data flow, optimization, and system performance. <br><br>
+
+I’ve successfully developed multiple projects such as a Complaint Tracking System, Bus Reservation System, and Food Ordering and Payment System, applying technologies like Java, Spring Boot, MySQL, HTML, CSS, and JavaScript to deliver reliable, full-stack web applications. <br><br>
+
+<span id="qspider">A major milestone in my learning journey was completing the Java Full Stack Development Course at QSpiders (2025).
+Through this program, I gained hands-on expertise in:
+
+Core Java, Advanced Java (JDBC, Servlets, JSP)
+
+Frontend technologies – HTML, CSS, JavaScript
+
+Database management using MySQL
+
+Spring Framework & Spring Boot for building scalable web apps
+
+Git & GitHub for version control and project collaboration
+
+Real-time project development and deployment practices
+
+This course helped me bridge the gap between academic learning and industry-level software development by providing practical exposure to end-to-end application building — from frontend interfaces to backend APIs and database connectivity.</span><br><br>
+
+I hold a B.E. in Computer Science and Engineering from Kingston Engineering College, Vellore (CGPA: 8.2/10) and have also completed Java Programming courses from Udemy and Infosys Springboard.
+
+I’m an enthusiastic learner who believes in continuous improvement, teamwork, and creativity — always striving to grow as a developer and make a meaningful impact through technology.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Bus Reservation System</h3>
+         Technologies: Java, MySQL, Spring Boot, HTML, CSS, JavaScript <br>
+        <p>• Java + MySQL + Spring Boot project for booking and managing bus reservations. <br>
+           • Engineered a reservation system with database integration for managing bookings. <br>
+ • Implemented real-time seat availability and secure transaction handling, <br>
+• The system also provides an admin panel to manage bus routes, schedules, and user bookings. Implemented using Spring Boot for backend REST APIs and MySQL for database management.
+        </p>
+      </div>
+      <div class="project-card">
+        <h3>Complaint Tracking System</h3>
+        <p>
+          Technologies: Java, Spring Boot, JWT Authentication, MySQL, HTML, CSS, JavaScript <br>
+           • Built a secure web app to manage complaints with role-based authentication using Java. <br>
+ • Designed REST APIs and integrated frontend for seamless complaint submission and tracking. <br>
+• Built a secure web app to manage complaints with role-based authentication using Java. <br>
+ • Designed REST APIs and integrated frontend for seamless complaint submission and tracking. <br>
+ • Improved security by 40% through robust authentication and error handling Spring Boot app with JWT authentication to track and resolve user complaints.</p>
+      </div>
+      <div class="project-card">
+        <h3>Food Ordering and Payment System</h3>
+        <p>
+          Technologies: Java, MySQL, Spring Boot, HTML, CSS, JavaScript <br>
+• An online platform for ordering food and processing payments. <br>
+• Users can browse restaurants, select dishes, place orders, and pay online. <br>
+• Admin can manage menu items, orders, and user details. <br>
+• The system demonstrates end-to-end full-stack development with database management, secure transaction handling, and responsive UI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-list">
+      <span>Java</span>
+      <span>Spring Boot</span>
+      <span>Python</span>
+      <span>SQL</span>
+      <span>MySQL</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React</span>
+      <span>JDBC</span>
+      <span>Spring</span>
+      <span>Git Hub</span>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+  <h2 class="section-title">Contact Me</h2>
+  <form id="contactForm">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+
+  <!-- Contact Links -->
+<div class="contact-links" style="text-align:center; margin-top:30px;">
+    <a href="mailto:pavithravasi03@gmail.com" target="_blank" style="margin:0 15px; text-decoration:none;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/gmail.png" alt="Gmail" style="width:35px; vertical-align:middle;">
+    </a>
+    <a href="https://www.linkedin.com/in/pavithra-siva-345973285" target="_blank" style="margin:0 15px; text-decoration:none;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" style="width:35px; vertical-align:middle;">
+    </a>
+    <a href="https://github.com/pavithrasiva03" target="_blank" style="margin:0 15px; text-decoration:none;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" style="width:35px; vertical-align:middle;">
+    </a>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Pavithra | All Rights Reserved</p>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var typed = new Typed('#typed', {
+    strings: [
+    "Turning Ideas into Code 💻",
+    "a Full-Stack Developer 🚀",
+    "Building Smart, Scalable Systems ⚡",
+    "Making Pixels & Data Dance 🎨📊"
+  ],
+    typeSpeed: 80,
+    backSpeed: 30,
+    loop: true
+  });
+emailjs.init("SmP4N9YIq7lFDzbI5"); // Your EmailJS User ID
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm('service_ofdrgi8', 'template_wd8lzyj', this)
+    .then(() => {
+      alert("Message sent successfully!");
+      this.reset();
+    }, (error) => {
+      alert("Failed to send message: " + JSON.stringify(error));
+    });
+});
+</script>
+
+</body>
+</html>
+
